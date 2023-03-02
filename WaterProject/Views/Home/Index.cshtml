@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+}
+@model ProjectsViewModel
+
+<h1>The Book Store</h1>
+
+@foreach (Books b in Model.Books)
+{
+    // Print out books
+    <div class="card card-outline-primary m-1 p-1">
+        <div class="bg-faded p-1">
+            <h3>@b.Title</h3>
+            <span class="badge badge-pill badge-primary" style="float:right">
+                <span> Price: @b.Price</span>
+            </span>
+            <ul class="card-text p">
+                <li>
+                    Author: @b.Author
+                </li>
+
+                <li> Publisher: @b.Publisher</li>
+                <li> ISBN: @b.Isbn</li>
+                <li> Classification: @b.Classification</li>
+                <li> Category: @b.Category</li>
+                <li> PageCount: @b.PageCount</li>
+            </ul>
+        </div>
+    </div>
+    <br />
+    <br />
+}
+
+<!-- Paginations-->
+<div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1">
+</div>
+
