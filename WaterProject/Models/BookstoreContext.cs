@@ -22,6 +22,5 @@ namespace WaterProject.Models
         public DbSet<Books> Books { get; set; }
 
 
-
     }
 }
